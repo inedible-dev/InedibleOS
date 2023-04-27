@@ -2,6 +2,8 @@
 
 **Don't make it public yet, I still need to check for license and stuff.**
 
+**Install image password is "live" without the quote.**
+
 # Build instructions
 
 **Requirements (Build Environment)**
