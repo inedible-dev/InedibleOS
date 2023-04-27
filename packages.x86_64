@@ -163,7 +163,6 @@ libisofs
 libisoburn
 linux-headers
 logrotate
-lsb-release
 openssl
 os-prober
 p7zip

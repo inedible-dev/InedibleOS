@@ -223,7 +223,7 @@ echo "C.UTF-8 UTF-8" >> ./ezreleng/airootfs/etc/locale.gen
 
 # Start mkarchiso
 runmkarchiso () {
-mkarchiso -v -w ./work -o ./out ./ezreleng
+./mkarchiso -v -w ./work -o ./out ./ezreleng
 }
 
 # ----------------------------------------
@@ -249,6 +249,7 @@ crtkeyboard
 crtlocalec
 runmkarchiso
 rmezrepo
+cleanup
 
 
 # Disclaimer:

@@ -1,0 +1,1 @@
+repo-add ./ezrepo.db.tar.gz trizen-11.68-1-any.pkg.tar.zst calamares-3.2.61-3-x86_64.pkg.tar.zst ckbcomp-1.218-1-any.pkg.tar.zst mkinitcpio-openswap-0.1.0-3-any.pkg.tar.zst

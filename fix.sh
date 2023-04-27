@@ -1,0 +1,1 @@
+sudo rm -f ./work/x86_64/airootfs/etc/lsb-release
