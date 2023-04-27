@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="ezarcher-xfce"
-iso_label="EZARCHER-XFCE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="Ezarcher Linux <https://sourceforge.net/projects/ezarch/>"
-iso_application="Ezarcher DVD"
+iso_name="InedibleOS"
+iso_label="InedibleOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_publisher="Inedible.dev"
+iso_application="Inedible DVD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
