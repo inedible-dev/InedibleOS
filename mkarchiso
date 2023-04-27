@@ -361,7 +361,6 @@ _make_packages() {
 	_msg_info "Debug5"
         env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}"
     fi
-
     _msg_info "Release Updated"
 
     if [[ -v cert_list[0] ]]; then
@@ -379,8 +378,9 @@ _make_packages() {
         exec {ARCHISO_GNUPG_FD}<&-
         unset ARCHISO_GNUPG_FD
     fi
-
+    rm -f ./work/x86_64/airootfs/etc/lsb-release
     _msg_info "Done! Packages installed successfully."
+    cp ./lsb-release ./work/x86_64/airootfs/etc/lsb-release
 }
 
 # Customize installation.
