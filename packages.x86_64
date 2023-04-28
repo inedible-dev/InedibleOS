@@ -322,7 +322,7 @@ python-reportlab
 simple-scan
 system-config-printer
 
-# Xfce
+# GNOME
 accountsservice
 adapta-gtk-theme
 aisleriot
