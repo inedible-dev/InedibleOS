@@ -346,9 +346,9 @@ polkit-gnome
 transmission-gtk
 xarchiver
 xfburn
-xfce4
-xfce4-goodies
 xpdf
+gnome
+gnome-terminal
 
 # Display Manager
 sddm
