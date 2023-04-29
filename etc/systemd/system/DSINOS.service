@@ -1,9 +1,0 @@
-[Unit]
-Description=Waiting for DSINOS to arrive.
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/DSINOS
-
-[Install]
-WantedBy=multi-user.target
