@@ -6,8 +6,17 @@
 
 # Build instructions
 
-**Requirements (Build Environment)**
-1. Arch Linux REQUIRED as a kernel build environment (Manjaro **DOES NOT WORK** even though it is based on Arch)
+**Requirements (Build Environment):**
+
+Arch Linux REQUIRED as a kernel build environment (Manjaro **DOES NOT WORK** even though it is based on Arch)
+
+Device requirement:
+
+PC/Mac with at least 8 GB of ram, 50 GB of free disk space and 2 cores of x86_64 CPU (Using virtual machine might require more resources).
+
+
+**Building Process**
+1. Clone the repo.
 2. Go in opt/ezrepo, check the calamares-dependencies.txt for any required but not installed dependencies.
 3. Open the terminal in opt/ezrepo, then copy and paste this command:
 ```
