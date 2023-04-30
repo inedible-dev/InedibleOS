@@ -203,6 +203,8 @@ gvfs-nfs
 gvfs-smb
 
 # Multimedia
+sof-firmware
+alsa-firmware
 alsa-lib
 alsa-plugins
 alsa-firmware
@@ -348,7 +350,6 @@ xarchiver
 xfburn
 xpdf
 gnome
-gnome-terminal
 
 # Display Manager
 sddm
