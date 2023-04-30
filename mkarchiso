@@ -203,7 +203,7 @@ _mkairootfs_ext4+squashfs() {
     E2FSPROGS_FAKE_TIME="${SOURCE_DATE_EPOCH}" mkfs.ext4 "${mkfs_ext4_options[@]}" -- "${pacstrap_dir}.img" 32G
     tune2fs -c 0 -i 0 -- "${pacstrap_dir}.img" > /dev/null
     _msg_info "Done!"
-
+    rm -f ./work/x86_64/airootfs/home/live/ezarcher
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}.img"
