@@ -41,7 +41,7 @@ validpgpkeys=(
   C7E7849466FE2358343588377258734B41C31549  # David Runge <dvzrv@archlinux.org>
 )
 b2sums=('SKIP'
-        'c5db5dfb60cbef2b5d2f7d383adf906113351d67ab3c032e1c9e443f8f70f998ff8a01961739eaf22db2133d6f9928cf9ccd9ea87cf6c1d7e52b4a98174b473d')
+        '9d22938664dae6e05446d439d458af99064968416db9e2412c676f267b3e2e072a43eca56a263e8dd317d5776bfc36a1ee01f7457a6eadd6f5d65b675c27c807')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -74,7 +74,7 @@ prepare() {
 
   echo "Setting config..."
   cp ../config .config
-  # _make xconfig
+  _make olddefconfig
   diff -u ../config .config || :
 
   echo "Prepared $pkgbase version $(<version)"
@@ -82,7 +82,7 @@ prepare() {
 
 build() {
   cd $_srcname
-  _make all
+  _make all -j3
 }
 
 _package() {
@@ -112,7 +112,7 @@ _package() {
   echo "Installing boot image..."
   # systemd expects to find the kernel here to allow hibernation
   # https://github.com/systemd/systemd/commit/edda44605f06a41fb86b7ab8128dcf99161d2344
-  install -Dm644 "$(_make -s image_name)" "$modulesdir/vmlinuz"
+  install -Dm644 "./arch/x86/boot/bzImage" "$modulesdir/vmlinuz"
 
   # Used by mkinitcpio to name the kernel
   echo "$pkgbase" | install -Dm644 /dev/stdin "$modulesdir/pkgbase"
