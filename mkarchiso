@@ -204,6 +204,10 @@ _mkairootfs_ext4+squashfs() {
     tune2fs -c 0 -i 0 -- "${pacstrap_dir}.img" > /dev/null
     _msg_info "Done!"
     rm -f ./work/x86_64/airootfs/home/live/ezarcher
+    rm -f ./work/x86_64/airootfs/etc/skel/ezarcher
+    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
+    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
+    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}.img"
@@ -216,6 +220,12 @@ _mkairootfs_squashfs() {
     [[ -e "${pacstrap_dir}" ]] || _msg_error "The path '${pacstrap_dir}' does not exist" 1
 
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
+    rm -f ./work/x86_64/airootfs/home/live/ezarcher
+    rm -f ./work/x86_64/airootfs/etc/skel/ezarcher
+    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
+    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
+    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
+    
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}"
 }
@@ -380,6 +390,9 @@ _make_packages() {
     fi
     rm -f ./work/x86_64/airootfs/etc/lsb-release
     _msg_info "Done! Packages installed successfully."
+    rm -rf ./work/x86_64/airootfs/boot/vmlinuz-linux
+    rm -rf ./work/x86_64/airootfs/boot/initramfs-linux.img
+    rm -rf ./work/x86_64/airootfs/boot/initramfs-linux-fallback.img
     cp ./lsb-release ./work/x86_64/airootfs/etc/lsb-release
 }
 
