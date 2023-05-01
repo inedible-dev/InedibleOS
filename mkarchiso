@@ -203,8 +203,10 @@ _mkairootfs_ext4+squashfs() {
     E2FSPROGS_FAKE_TIME="${SOURCE_DATE_EPOCH}" mkfs.ext4 "${mkfs_ext4_options[@]}" -- "${pacstrap_dir}.img" 32G
     tune2fs -c 0 -i 0 -- "${pacstrap_dir}.img" > /dev/null
     _msg_info "Done!"
-    rm -f ./work/x86_64/airootfs/home/live/ezarcher
-    rm -f ./work/x86_64/airootfs/etc/skel/ezarcher
+    rm -rf ./work/x86_64/airootfs/home/live/ezarcher
+    rm -rf ./work/x86_64/airootfs/etc/skel/ezarcher
+    rm -rf ./work/iso/home/live/ezarcher
+    rm -rf ./work/iso/etc/skel/ezarcher
     cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
     cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
     cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
@@ -220,11 +222,14 @@ _mkairootfs_squashfs() {
     [[ -e "${pacstrap_dir}" ]] || _msg_error "The path '${pacstrap_dir}' does not exist" 1
 
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
-    rm -f ./work/x86_64/airootfs/home/live/ezarcher
-    rm -f ./work/x86_64/airootfs/etc/skel/ezarcher
+    rm -rf ./work/x86_64/airootfs/home/live/ezarcher
+    rm -rf ./work/x86_64/airootfs/etc/skel/ezarcher
+    rm -rf ./work/iso/home/live/ezarcher
+    rm -rf ./work/iso/etc/skel/ezarcher
     cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
     cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
     cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
+    
     
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}"
