@@ -390,7 +390,7 @@ _make_packages() {
     fi
     rm -f ./work/x86_64/airootfs/etc/lsb-release
     _msg_info "Done! Packages installed successfully."
-    rm -rf ./work/x86_64/airootfs/boot/vmlinuz-linux
+    # rm -rf ./work/x86_64/airootfs/boot/vmlinuz-linux
     rm -rf ./work/x86_64/airootfs/boot/initramfs-linux.img
     rm -rf ./work/x86_64/airootfs/boot/initramfs-linux-fallback.img
     cp ./lsb-release ./work/x86_64/airootfs/etc/lsb-release
