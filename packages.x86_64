@@ -192,6 +192,9 @@ upower
 xdg-user-dirs
 xz
 zstd
+wine
+wine-mono
+wine-gecko
 
 # Filesystem
 gvfs
@@ -390,3 +393,4 @@ mkinitcpio-openswap
 
 # AUR
 trizen
+visual-studio-code-bin
