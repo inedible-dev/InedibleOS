@@ -207,9 +207,10 @@ _mkairootfs_ext4+squashfs() {
     rm -rf ./work/x86_64/airootfs/etc/skel/ezarcher
     rm -rf ./work/iso/home/live/ezarcher
     rm -rf ./work/iso/etc/skel/ezarcher
-    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
-    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
-    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
+    rm -rf ./work/x86_64/airootfs/boot/vmlinuz-linux
+    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-linux
+    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-linux.img
+    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-linux-fallback.img
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}.img"
@@ -226,10 +227,11 @@ _mkairootfs_squashfs() {
     rm -rf ./work/x86_64/airootfs/etc/skel/ezarcher
     rm -rf ./work/iso/home/live/ezarcher
     rm -rf ./work/iso/etc/skel/ezarcher
-    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-inKernel
-    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-inKernel.img
-    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-inKernel-fallback.img
-    
+    rm -rf ./work/x86_64/airootfs/boot/vmlinuz-linux
+    cp ./vmlinuz-inKernel ./work/x86_64/airootfs/boot/vmlinuz-linux
+    cp ./initramfs-inKernel.img ./work/x86_64/airootfs/boot/initramfs-linux.img
+    cp ./initramfs-inKernel-fallback.img ./work/x86_64/airootfs/boot/initramfs-linux-fallback.img
+
     
     _msg_info "Creating SquashFS image, this may take some time..."
     _run_mksquashfs "${pacstrap_dir}"
