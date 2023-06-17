@@ -4,12 +4,11 @@
 
 # Build instructions
 
-**Requirements (Build Environment):**
+**Requirements (Build Environment):**\
+Arch Linux REQUIRED as a build environment (Manjaro **DOES NOT WORK** even though it is based on Arch)\
+Future arm64 support is planned.
 
-Arch Linux REQUIRED as a build environment (Manjaro **DOES NOT WORK** even though it is based on Arch)
-
-Device requirement:
-
+**Device requirement:**\
 PC/Mac with at least 8 GB of ram, 50 GB of free disk space and 2 cores of x86_64 CPU (Using virtual machine might require more resources).
 
 
