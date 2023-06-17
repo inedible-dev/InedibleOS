@@ -30,5 +30,3 @@ su
 ./build.sh
 ```
 4. The iso file will be created outside of the root folder.
-
-```Note: the wine Windows translation layer is not included, you can include the wine AUR package in opt/ezrepo```
