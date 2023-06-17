@@ -6,6 +6,7 @@
 
 **Requirements (Build Environment):**\
 Arch Linux REQUIRED as a build environment (Manjaro **DOES NOT WORK** even though it is based on Arch)\
+Only **x86_64** is supported\
 ***arm64*** support is planned.
 
 **Device requirement:**\
